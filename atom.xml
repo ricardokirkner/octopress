@@ -4,7 +4,7 @@
   <title><![CDATA[Dígame Licenciado]]></title>
   <link href="http://www.kirkner.com.ar/octopress/atom.xml" rel="self"/>
   <link href="http://www.kirkner.com.ar/octopress/"/>
-  <updated>2013-12-11T19:55:00-03:00</updated>
+  <updated>2013-12-11T20:27:33-03:00</updated>
   <id>http://www.kirkner.com.ar/octopress/</id>
   <author>
     <name><![CDATA[Ricardo Kirkner]]></name>
@@ -19,6 +19,112 @@
     <updated>2013-12-11T19:50:44-03:00</updated>
     <id>http://www.kirkner.com.ar/octopress/blog/2013/12/11/playing-with-octopress</id>
     <content type="html"><![CDATA[<p>This is a test post.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Configglue 0.11 Released]]></title>
+    <link href="http://www.kirkner.com.ar/octopress/blog/2011/06/23/configglue-011-released/"/>
+    <updated>2011-06-23T18:21:49-03:00</updated>
+    <id>http://www.kirkner.com.ar/octopress/blog/2011/06/23/configglue-011-released</id>
+    <content type="html"><![CDATA[<p>This release (0.11) brings configglue another step closer to the much
+awaited 1.0 milestone. It includes two incredible features:</p>
+<div class="section" id="environment-variables-support">
+<h2>Environment variables support</h2>
+<p>Environment variables are now supported in two flavours</p>
+<div class="section" id="during-command-line-integration">
+<h3>During command-line integration</h3>
+<p>If an environment variable of the form CONFIGGLUE_FOO_BAR is defined, it will
+be used to override the configuration value for option <strong>foo</strong> in section
+<strong>bar</strong>, according to the following precedence rules</p>
+<blockquote>
+<ol class="arabic simple">
+<li>Explicitly defined via command-line (i.e, &#8211;section_option=value)</li>
+<li>Implicitly defined via environment variable (i.e, CONFIGGLUE_SECTION_OPTION)</li>
+<li>Explicitly defined via configuration files</li>
+<li>Implicitly defined via schema defaults</li>
+</ol>
+</blockquote>
+</div>
+<div class="section" id="as-placeholders-in-configuration-files">
+<h3>As placeholders in configuration files</h3>
+<p>In the configuration files, if an option has a value such as $FOO or ${FOO}
+it will be interpolated using the FOO environment variable, or if that variable
+is not defined, it will fallback to the default value for that option.</p>
+</div>
+</div>
+<div class="section" id="base-class-for-writing-configglue-enabled-applications">
+<h2>Base class for writing configglue-enabled applications</h2>
+<p>By inheriting from <strong>configglue.app.App</strong>, your application will now
+automatically</p>
+<div class="section" id="read-configuration-files-from-standard-locations">
+<h3>Read configuration files from standard locations</h3>
+<p>The configglue-enabled app will automatically follow the XDG standards for
+looking up configuration files. For example, if your application is named
+&#8221;&#8217;myapp&#8221;&#8217;, the following locations will be searched for configuration values:</p>
+<pre class="literal-block">
+1. /etc/xdg/myapp/myapp.cfg
+2. /home/user/.config/myapp/myapp.cfg
+3. ./local.cfg
+</pre>
+</div>
+<div class="section" id="support-plugins-for-extending-your-application">
+<h3>Support plugins for extending your application</h3>
+<p>The class <strong>configglue.app.Plugin</strong> will allow you to write plugins for your
+application so that each plugin can have it&#8217;s own configglue-based configuration.</p>
+<p>Each plugin registered with the application will have it&#8217;s own schema and
+configuration files, which will be included during validation. If the plugin
+is named &#8221;&#8217;myplugin&#8221;&#8217;, the following additional locations will be searched
+for configuration values:</p>
+<pre class="literal-block">
+1. /etc/xdg/myapp/myplugin.cfg
+2. /home/user/.config/myapp/myplugin.cfg
+</pre>
+<p>Plugins need to be registered with the manually for the time being. For doing
+so, just call <strong>App.plugins.register</strong>, like</p>
+<dl class="docutils">
+<dt>::</dt>
+<dd><dl class="first docutils">
+<dt>class FooSchema(Schema):</dt>
+<dd>bar = IntOption()</dd>
+<dt>class Foo(Plugin):</dt>
+<dd>enabled = True
+schema = FooSchema</dd>
+</dl>
+<p class="last">myapp = App(name=&#8217;myapp&#8217;)
+myapp.plugins.register(Foo)&lt;/pre&gt;&lt;/div&gt;</p>
+</dd>
+</dl>
+<p>This example will register a <strong>Foo</strong> plugin which will be enabled by default.</p>
+<p>Plugins can be enabled/disabled on demand, by calling the respective method,
+like</p>
+<dl class="docutils">
+<dt>::</dt>
+<dd><p class="first">myapp.plugins.enable(Foo)
+print myapp.plugins.enabled
+[&lt;class &#8216;Foo&#8217;&gt;]</p>
+<p class="last">myapp.plugins.disable(Foo)
+print myapp.plugins.enabled
+[]</p>
+</dd>
+</dl>
+<p>The list of available plugins can be retrieved like</p>
+<dl class="docutils">
+<dt>::</dt>
+<dd>print myapp.plugins.available
+[&lt;class &#8216;Foo&#8217;&gt;]</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="closing-remarks">
+<h2>Closing remarks</h2>
+<p>Documentation is still missing for this release, but I hope that this short
+introduction will raise your interest enough to check out the code and start
+using it!</p>
+<p>Questions will as usual always be answered on #configglue (on freenode).</p>
+<p>Happy hacking!</p>
+</div>
+
 ]]></content>
   </entry>
   
