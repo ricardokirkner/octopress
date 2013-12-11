@@ -1,16 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My Octopress Blog]]></title>
-  <link href="http://ricardokirkner.github.io/octopress/atom.xml" rel="self"/>
-  <link href="http://ricardokirkner.github.io/octopress/"/>
-  <updated>2013-12-11T19:45:02-03:00</updated>
-  <id>http://ricardokirkner.github.io/octopress/</id>
+  <title><![CDATA[Dígame Licenciado]]></title>
+  <link href="http://www.kirkner.com.ar/octopress/atom.xml" rel="self"/>
+  <link href="http://www.kirkner.com.ar/octopress/"/>
+  <updated>2013-12-11T19:53:02-03:00</updated>
+  <id>http://www.kirkner.com.ar/octopress/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[Ricardo Kirkner]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Playing With Octopress]]></title>
+    <link href="http://www.kirkner.com.ar/octopress/blog/2013/12/11/playing-with-octopress/"/>
+    <updated>2013-12-11T19:50:44-03:00</updated>
+    <id>http://www.kirkner.com.ar/octopress/blog/2013/12/11/playing-with-octopress</id>
+    <content type="html"><![CDATA[<p>This is a test post.</p>
+]]></content>
+  </entry>
   
 </feed>

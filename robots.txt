@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://ricardokirkner.github.io/octopress/sitemap.xml 
+Sitemap: http://www.kirkner.com.ar/octopress/sitemap.xml 

@@ -1,15 +1,19 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
-        <loc>http://ricardokirkner.github.io/octopress/blog/archives/</loc>
-        <lastmod>2013-12-11T19:44:15-03:00</lastmod>
+        <loc>http://www.kirkner.com.ar/octopress/blog/2013/12/11/playing-with-octopress/</loc>
+        <lastmod>2013-12-11T19:52:20-03:00</lastmod>
     </url>
     <url>
-        <loc>http://ricardokirkner.github.io/octopress/</loc>
-        <lastmod>2013-12-11T19:44:15-03:00</lastmod>
+        <loc>http://www.kirkner.com.ar/octopress/blog/archives/</loc>
+        <lastmod>2013-12-11T19:52:20-03:00</lastmod>
     </url>
     <url>
-        <loc>http://ricardokirkner.github.io/octopress/robots.txt</loc>
+        <loc>http://www.kirkner.com.ar/octopress/</loc>
+        <lastmod>2013-12-11T19:52:20-03:00</lastmod>
+    </url>
+    <url>
+        <loc>http://www.kirkner.com.ar/octopress/robots.txt</loc>
         <lastmod>2013-12-11T19:44:15-03:00</lastmod>
     </url>
 </urlset>
